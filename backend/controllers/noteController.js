@@ -22,13 +22,14 @@ const createNote = (data, res) => {
     
     Models.Note.create(data).then(function (data) {
         res.send({ result: 200, data: data })
+        console.log(data)
     }).catch(err => {
         throw err
     })
 }
 
 const updateNote = (req, res) => {
-   
+    
     Models.Note.update(req.body, {
         where: {
             id:

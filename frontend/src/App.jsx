@@ -5,6 +5,8 @@ import LogIn from './components/LogIn'
 import Signup from './components/Signup';
 import Rating from './components/Rating';
 import Notes from './components/Notes';
+import Chart from './components/Chart';
+import LineChart from './components/LineChat';
 
 
 
@@ -22,6 +24,8 @@ const togglePage = (page) => {
 
      <Rating/>
      <Notes/>
+     {/* <Chart/> */}
+     <LineChart/>
 
 
     </div>

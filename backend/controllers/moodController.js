@@ -22,6 +22,7 @@ const createMood = (data, res) => {
     
     Models.Mood.create(data).then(function (data) {
         res.send({ result: 200, data: data })
+        console.log(data)
     }).catch(err => {
         throw err
     })

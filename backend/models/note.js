@@ -3,6 +3,7 @@ let dbConnect = require("../dbConnect");
 const sequelizeInstance = dbConnect.Sequelize;
 const User = require('./user')
 
+
 class Note extends Model { }
 //Sequelize will create this table if it doesn't exist on startup
 Note.init({
@@ -10,8 +11,9 @@ Note.init({
         type: DataTypes.INTEGER, allowNull: false, autoIncrement: true, primaryKey: true
     },
 
-    notes: {
-        type: DataTypes.STRING, allowNull: false, required: true
+    note: {
+        type: DataTypes.STRING, allowNull: false, required: true,
+     
     },
 
     userId: {
@@ -21,10 +23,11 @@ Note.init({
             key: "id"
         }
     },
+
    
 },
     {
-        sequelize: sequelizeInstance, modelName: 'notes', timestamps: true, freezeTableName: true
+        sequelize: sequelizeInstance, modelName: 'note', timestamps: true, freezeTableName: true
     }
 )
 module.exports = Note;

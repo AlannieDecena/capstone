@@ -13,6 +13,7 @@ router.get('/:id', (req, res) => {
 })
 
 router.post('/create', (req, res) => {
+    // console.log(req.body.mood)
     Controllers.createNote(req.body, res)
 })
 
