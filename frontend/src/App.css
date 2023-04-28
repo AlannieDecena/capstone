@@ -1,12 +1,165 @@
+:root {
+  /* CSS HEX */
+  --slate-blue: #7165b1ff;
+  --wisteria: #bea4d3ff; /* background */
+  --pale-purple: #f0e2f9ff;
+  --periwinkle: #bcccffff;
+  --vista-blue: #8c9de2ff;
+}
+
 #root {
-  max-width: 1280px;
   margin: 0 auto;
   text-align: center;
-  width: 100%;
+  width: 100vw;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: "Lato", sans-serif;
+  flex-direction: column;
+  background: linear-gradient(
+    0deg,
+    rgba(113, 101, 177, 1) 0%,
+    rgba(190, 164, 211, 1) 73%
+  );
+}
+
+.App {
+  width: inherit;
+  height: inherit;
+}
+
+.navBar {
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+.entryPage {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.UserPage{
+  width: inherit;
+  height: inherit;
+}
+
+.contentUser {
+  /* margin-right: auto; */
+  margin-left: auto;
+  width: 90%;
+  height:100%;
+}
+
+section {
+  
+  width: 100%;
+  /* height: 100%; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* background-color: red; */
+  
+
 }
 
 
-.componentBox { border: 1px solid #aaa; margin: 1em; padding: 1em; text-align: center; background: #efefef; }
+
+h6 {
+  padding-left: 1rem;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.componentBox {
+  border: 1px solid #aaa;
+  margin: 1em;
+  padding: 1em;
+  text-align: center;
+  background: #efefef;
+}
+
+.LogInBox {
+  margin: 0 auto;
+  margin-top: 8rem ;
+  padding: 1em;
+  width: 20rem;
+  height: 30rem;
+
+  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
+  border-radius: 16px;
+  background-color: rgba(255, 255, 255, .15);
+  backdrop-filter: blur(5px);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+/* -------------------side Menu CSS------------------------- */
+.sideDiv {
+  width: 200px;
+  height: 100%;
+  position: absolute;
+  background: #75DDBD;
+}
+.sideMenu {
+  padding: 40px 0 40px 20px;
+  list-style-type: none;
+  width: 200px;
+  height:100%;
+
+  /* position: absolute;    */
+}
+.sideMenu > li {
+  padding: 15px;
+  cursor: pointer;
+  position: relative;
+}
+.sideMenu > li:hover::before, .sideMenu > li:hover::after {
+  content: "";
+  position: absolute;
+}
+.sideMenu > li:hover {
+  background: #FFE2AC;
+  border-radius: 60px 0 0 60px;
+}
+.sideMenu > li > a {
+  padding: 10px 15px; 
+  font-family: 'Source Sans Pro', sans-serif;
+  color: #0A8660;
+  text-decoration: none;    
+}
+.sideMenu > li:hover > a {
+  color: #FFA90A;
+}
+.sideMenu > li:hover::before {
+  top: -80px;
+  right: -1px;
+  height: 80px;
+  width: 40px;
+  border-bottom-right-radius: 80px;
+  -moz-border-bottom-right-radius: 80px;
+  -webkit-border-bottom-right-radius: 80px;
+  -webkit-box-shadow: 0 40px 0 0 #FFE2AC; 
+  -moz-box-shadow: 0 40px 0 0 #FFE2AC;
+  box-shadow: 0 40px 0 0 #FFE2AC;
+}
+.sideMenu > li:hover::after {
+  top: 50px;
+  right: -1px;
+  height: 80px;
+  width: 40px;
+  border-top-right-radius: 80px;
+  -moz-border-top-right-radius: 80px;
+  -webkit-border-top-right-radius: 80px;
+  -webkit-box-shadow: 0 -40px 0 0 #FFE2AC;
+  -moz-box-shadow: 0 -40px 0 0 #FFE2AC;
+  box-shadow: 0 -40px 0 0 #FFE2AC;
+}

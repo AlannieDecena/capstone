@@ -3,51 +3,54 @@ import { Line } from "react-chartjs-2";
 import axios from "axios";
 import React, { useState, useContext, useEffect } from "react";
 import {useParams} from 'react-router-dom'
+import { UserContext } from "../context/UserContext";
 
-const labels = ["January", "February", "March", "April", "May", "June"];
 
-const data = {
-  labels: labels,
-  datasets: [
-    {
-      label: "My First dataset",
-      backgroundColor: "rgb(255, 99, 132)",
-      borderColor: "rgb(255, 99, 132)",
-      data: [1, 2, 3, 4, 5],
-    //   data: moodData
-    },
-  ],
-};
+const labels = ["Sunday", "Monday", "Tuesday", "Wednesday", "Friday", "Saturday"];
+
 
 const LineChart = () => {
+    
+    const {userCurrent} = useContext(UserContext);
+
+
     const [moodData, setMoodData] = useState([]);
-    const [mood, setMood] = useState()
     const params = useParams();
     const id = params.id;
+    console.log(userCurrent)
+    // const userCurrent = userCurrent.id
+
+    useEffect( () => {
     axios
     // .get(`http://localhost:8001/mood/${id}`)
-    .get(`http://localhost:8001/mood`)
+    .get(`http://localhost:8001/mood/weeklymood/${userCurrent.id}`)
     .then((response) => {
-      setMoodData(response.data);
-      // const blah = response.data;
-      // blah.filter((moods) => moods.id.includes(1))
-      // moodFinder();
+      setMoodData(response.data.data);
+      console.log(response.data.data)
 
     })
     .catch((error) => {
       console.log(error);
     });
-const moodFinder = (value) => {
-return value === 1;
-const moodId = moodData.data;
-  // const filtered = moodId.filter(moodFinder)
-  console.log(moodId)
-} 
+  }, [])
+
+  const data = {
+    labels: labels,
+    datasets: [
+      {
+        label: "Current Week",
+        backgroundColor: "rgb(255, 99, 132)",
+        borderColor: "rgb(255, 99, 132)",
+   
+        data: moodData
+      },
+    ],
+  };
 
   return (
     <div>
       <Line data={data} />
-      <button onClick={moodFinder}>mood</button>
+     
     </div>
   );
 };

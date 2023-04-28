@@ -1,29 +1,30 @@
-import { Routes, Route } from "react-router-dom"
-import React from "react"
-import App from "../App"
-import Login from "../components/LogIn"
-import PageNotFound from "../pages/PageNotFound"
-
-
-
-
+import { Routes, Route } from "react-router-dom";
+import React from "react";
+import App from "../App";
+import LogInPage from "../pages/logInPage";
+import PageNotFound from "../pages/PageNotFound";
+import LineChart from "../components/LineChat";
+import Rating from "../components/Rating";
+import EntryPage from "../pages/EntryPage";
+import Signup from "../components/Signup";
+import UserPage from "../pages/UserPage";
+import NotesPage from "../pages/NotesPage";
 
 function AppRoutes(props) {
-    
-    return (
-       
-        <Routes>
+  return (
+    <Routes>
+      <Route path="/" element={<EntryPage {...props} />} />
+      <Route path="/login" element={<LogInPage {...props} />} />
+      <Route path="/signup" element={<Signup {...props} />} />
+      <Route path="/user" element={<UserPage {...props} />} />
+      <Route path="/rating" element={<Rating {...props} />} />
+      <Route path="/notes" element={<NotesPage {...props} />} />
+      {/* <Route path="/notes" element={<Notes {...props} />} /> */}
+      
 
-
-            <Route path='/login' element={<Login {...props} />} />
-
-            {/* special route to handle if none of the above match */}
-            <Route path="*" element={<PageNotFound />} />            
-        </Routes>
-       
-    )
+      {/* <Route path="*" element={<PageNotFound />} /> */}
+    </Routes>
+  );
 }
 
-
-
-export default AppRoutes
+export default AppRoutes;
