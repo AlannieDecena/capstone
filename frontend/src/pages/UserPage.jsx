@@ -3,9 +3,9 @@ import LineChart from "../components/LineChat";
 import { UserContext} from "../context/UserContext";
 import {useParams} from 'react-router-dom'
 import { useEffect, useState, useContext } from "react";
-import axios from "axios";
 import useFormInput from "../hooks/useFormInput";
 import Note from "../components/Note";
+
 
 export default function UserPage() {
   const {userCurrent} = useContext(UserContext);
@@ -25,11 +25,14 @@ export default function UserPage() {
   return (
     <div className="UserPage">
       <SideBar />
+  
       <div className="contentUser">
-        <h1>hello {userCurrent.name}</h1>
-        <section>
-          <LineChart/>
-          <Note/>
+        <div className="userNameBox">
+        <h1>Hey {userCurrent.name}!</h1>
+        </div>
+        <section className="userContentBox">
+          {/* <LineChart/>
+          <Note/> */}
         </section>
       </div>
     </div>

@@ -21,9 +21,10 @@ const togglePage = (page) => {
     <>
    
     <div >
-      <NavBar/>
+      {/* <NavBar/> */}
         {currentPage === 'login' ? <LogIn onPageSwitch={togglePage} /> : <Signup onPageSwitch={togglePage}/>}
         <LogOut/>
+        
     </div>
 
     

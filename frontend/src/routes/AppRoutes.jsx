@@ -9,6 +9,8 @@ import EntryPage from "../pages/EntryPage";
 import Signup from "../components/Signup";
 import UserPage from "../pages/UserPage";
 import NotesPage from "../pages/NotesPage";
+import DisplayMoods from "../components/DisplayMoods";
+import Notes from "../components/Notes";
 
 function AppRoutes(props) {
   return (
@@ -18,8 +20,9 @@ function AppRoutes(props) {
       <Route path="/signup" element={<Signup {...props} />} />
       <Route path="/user" element={<UserPage {...props} />} />
       <Route path="/rating" element={<Rating {...props} />} />
-      <Route path="/notes" element={<NotesPage {...props} />} />
-      {/* <Route path="/notes" element={<Notes {...props} />} /> */}
+      <Route path="/displaymoods" element={<DisplayMoods {...props} />} />
+      <Route path="/displaynotes" element={<NotesPage {...props} />} />
+      <Route path="/notes" element={<Notes {...props} />} />
       
 
       {/* <Route path="*" element={<PageNotFound />} /> */}

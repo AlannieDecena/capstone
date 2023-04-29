@@ -26,21 +26,22 @@ export default function Notes() {
     nav("/user");
   };
   return (
-    <div>
-      <h3>Do have any thoughts you would like to write down?</h3>
+    <div className="notesBox">
+      <h3>Sometimes it's good to write our thoughts down</h3>
       <div className="form-floating">
         <textarea
           onChange={(e) => setNote(e.target.value)}
-          className="form-control"
-          placeholder="Leave a comment here"
+          className="form"
+          placeholder="Feel free to write anything"
           id="floatingTextarea2"
           style={{ height: "100px" }}
         ></textarea>
         <label htmlFor="floatingTextarea2"></label>
       </div>
-      <button onClick={handleNoteSubmit}>submit</button>
-      <button onClick={handleDoneBtn}>done</button>
-      <button onClick={handleBackBtn}>back</button>
+      <button className="btn-primary"  onClick={handleBackBtn}>back</button>
+      <button className="btn-primary" onClick={handleNoteSubmit}>submit</button>
+      <button className="btn-primary" onClick={handleDoneBtn}>done</button>
+      
     </div>
   );
 }

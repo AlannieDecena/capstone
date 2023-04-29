@@ -24,13 +24,14 @@ const handleBackBtn = () => {
 }
   return (
     <>
-    <div className="componentBox">
-        <h3>how are you feeling today?</h3>
+    <div className="ratingBox">
+        <h3>How are you today?</h3>
         {emojiRating.map((emoji) => 
-        <button key={emoji.rating}  onClick={() => dispatch(emoji.rating)}> {emoji.rating}</button>)}
-        <div>Mood= {mood}</div>
+        <button className="btn-primary" key={emoji.rating}  onClick={() => dispatch(emoji.rating)}> {emoji.rating}</button>)}
+        <div>I'm feeling {mood}</div>
+        <button className="btn-primary" onClick={handleBackBtn}>Next</button>
     </div>
-          <button onClick={handleBackBtn}>next</button>
+          
         </>
   )
 }

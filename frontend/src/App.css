@@ -1,13 +1,8 @@
-:root {
-  /* CSS HEX */
-  --slate-blue: #7165b1ff;
-  --wisteria: #bea4d3ff; /* background */
-  --pale-purple: #f0e2f9ff;
-  --periwinkle: #bcccffff;
-  --vista-blue: #8c9de2ff;
-}
+@import "bootstrap/dist/css/bootstrap.css";
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap");
 
 #root {
+  /* color: white; */
   margin: 0 auto;
   text-align: center;
   width: 100vw;
@@ -15,11 +10,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Lato", sans-serif;
+  font-family: 'Nunito', sans-serif;
   flex-direction: column;
   background: linear-gradient(
     0deg,
     rgba(113, 101, 177, 1) 0%,
+    /* var(--vista-blue) 73% */
     rgba(190, 164, 211, 1) 73%
   );
 }
@@ -29,32 +25,76 @@
   height: inherit;
 }
 
+
+:root {
+  /* CSS HEX */
+  --slate-blue: #7165b1ff;
+  --wisteria: #bea4d3ff; /* background */
+  --pale-purple: #f0e2f9ff;
+  --periwinkle: #bcccffff;
+  --vista-blue: #8c9de2ff;
+  --btn-primary: #8c9de2ff;
+}
+
+/* -------------------Buttons / Texts / Images CSS------------------------- */
+.btn-primary {
+  width: 5rem;
+  height: 2rem;
+  margin: 2rem;
+  background-color: var(--slate-blue);
+  color: white;
+  border-radius: 8px;
+  border: none;
+}
+
+.btn-primary:hover {
+  box-shadow: 0 0 0.35rem 0 var(--slate-blue);
+  background-color: var(--wisteria);
+  /* border: 1px solid var(--vista-blue); */
+}
+
+/* h1 {
+  color: red;
+  font-weight: bolder;
+} */
+
+/* h3 {
+  color: red;
+  font-weight: bolder;
+} */
+
+a {
+  text-decoration: none;
+  font-size: 0.78rem;
+  
+}
+
+a:hover {
+  font-weight: 900;
+  color: red;
+}
+
+img {
+  width: 13rem;
+  align-self: center;
+  margin-bottom: 1rem;
+
+}
+
+.sideLogo {
+  width: 8rem;
+  /* align-self: center; */
+  margin-top: 20rem;
+  margin-right: 1.3rem;
+}
+
+/* -------------------Buttons / Texts / Images CSS------------------------- */
 .navBar {
   display: flex;
   justify-content: space-between;
-  
-}
-
-.entryPage {
-  display: flex;
-  flex-direction: column;
-
-}
-
-.UserPage{
-  width: inherit;
-  height: inherit;
-}
-
-.contentUser {
-  /* margin-right: auto; */
-  margin-left: auto;
-  width: 90%;
-  height:100%;
 }
 
 section {
-  
   width: 100%;
   /* height: 100%; */
   display: flex;
@@ -62,11 +102,7 @@ section {
   justify-content: center;
   align-items: center;
   /* background-color: red; */
-  
-
 }
-
-
 
 h6 {
   padding-left: 1rem;
@@ -83,17 +119,45 @@ h6 {
   background: #efefef;
 }
 
-.LogInBox {
+/* -------------------Rating / Mood Page CSS------------------------- */
+.ratingBox {
   margin: 0 auto;
-  margin-top: 8rem ;
-  padding: 1em;
-  width: 20rem;
-  height: 30rem;
+  margin-top: 6rem;
+  width: 80%;
+  height: 35rem;
+  padding-top: 9rem;
 
-  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
+  box-shadow: 0 0 1rem 0 rgb(103, 95, 130);
   border-radius: 16px;
-  background-color: rgba(255, 255, 255, .15);
-  backdrop-filter: blur(5px);
+  
+}
+/* -------------------LogIn / SignUp / Entry page CSS------------------------- */
+
+.entryPage {
+  /* margin: 0 auto; */
+  float: left;
+  display: flex;
+  padding: 2rem;
+  flex-direction: column;
+  width: 50%;
+  height: inherit;
+  /* background-color: var(--pale-purple); */
+  justify-content: center;
+  /* border-radius: 16px; */
+}
+
+.mb-3 {
+  /* centering the inputs */
+  justify-content: center;
+  width: 20rem;
+}
+
+.LogInBox {
+  padding: 1em;
+  width: inherit;
+  height: 35rem;
+  background-color: var(--pale-purple);
+  border-radius: 16px;
 
   display: flex;
   justify-content: center;
@@ -101,19 +165,35 @@ h6 {
   flex-direction: column;
 }
 
+.glassBox {
+  margin: 0 auto;
+  margin-top: 6rem;
+  width: 80%;
+  height: 35rem;
+  box-shadow: 0 0 1rem 0 rgb(103, 95, 130);
+  border-radius: 16px;
+  background-color: rgba(255, 255, 255, 0.4);
+  /* background-color: rgba(255, 255, 255, 0.316); */
+  backdrop-filter: blur(5px);
+}
 
 /* -------------------side Menu CSS------------------------- */
 .sideDiv {
   width: 200px;
   height: 100%;
   position: absolute;
-  background: #75DDBD;
+  background: linear-gradient(
+    0deg,
+    rgba(113, 101, 177, 1) 0%,
+    /* var(--vista-blue) 73% */
+    rgba(190, 164, 211, 1) 73%
+  );
 }
 .sideMenu {
   padding: 40px 0 40px 20px;
   list-style-type: none;
   width: 200px;
-  height:100%;
+  height: 100%;
 
   /* position: absolute;    */
 }
@@ -122,22 +202,24 @@ h6 {
   cursor: pointer;
   position: relative;
 }
-.sideMenu > li:hover::before, .sideMenu > li:hover::after {
+.sideMenu > li:hover::before,
+.sideMenu > li:hover::after {
   content: "";
   position: absolute;
 }
 .sideMenu > li:hover {
-  background: #FFE2AC;
+  background:white;
   border-radius: 60px 0 0 60px;
 }
 .sideMenu > li > a {
-  padding: 10px 15px; 
-  font-family: 'Source Sans Pro', sans-serif;
-  color: #0A8660;
-  text-decoration: none;    
+  padding: 10px 15px;
+  /* font-family: "Source Sans Pro", sans-serif; */
+  color: rebeccapurple;
+  text-decoration: none;
+  font-size: .90rem;
 }
 .sideMenu > li:hover > a {
-  color: #FFA90A;
+  color: rebeccapurple;
 }
 .sideMenu > li:hover::before {
   top: -80px;
@@ -147,10 +229,13 @@ h6 {
   border-bottom-right-radius: 80px;
   -moz-border-bottom-right-radius: 80px;
   -webkit-border-bottom-right-radius: 80px;
-  -webkit-box-shadow: 0 40px 0 0 #FFE2AC; 
-  -moz-box-shadow: 0 40px 0 0 #FFE2AC;
-  box-shadow: 0 40px 0 0 #FFE2AC;
-}
+  -webkit-box-shadow: 0 40px 0 0 white;
+  -moz-box-shadow:0 40px 0 0 white;
+  box-shadow:0 40px 0 0 white;
+   /* -webkit-box-shadow: 0 40px 0 0 #ffe2ac;
+  -moz-box-shadow: 0 40px 0 0 #ffe2ac;
+  box-shadow: 0 40px 0 0 #ffe2ac; */
+} 
 .sideMenu > li:hover::after {
   top: 50px;
   right: -1px;
@@ -159,7 +244,62 @@ h6 {
   border-top-right-radius: 80px;
   -moz-border-top-right-radius: 80px;
   -webkit-border-top-right-radius: 80px;
-  -webkit-box-shadow: 0 -40px 0 0 #FFE2AC;
-  -moz-box-shadow: 0 -40px 0 0 #FFE2AC;
-  box-shadow: 0 -40px 0 0 #FFE2AC;
+  -webkit-box-shadow: 0 -40px 0 0  white;
+  -moz-box-shadow: 0 -40px 0 0  white;
+  box-shadow: 0 -40px 0 0  white;
+  /* -webkit-box-shadow: 0 -40px 0 0 #ffe2ac;
+  -moz-box-shadow: 0 -40px 0 0 #ffe2ac;
+  box-shadow: 0 -40px 0 0 #ffe2ac; */
+}
+
+/* -------------------User Page CSS------------------------- */
+
+.UserPage {
+  width: inherit;
+  height: inherit;
+  background-color: white ;
+  
+}
+
+.contentUser {
+  /* margin-right: auto; */
+  margin-left: auto;
+  width: 90%;
+  height: 100%;
+  
+}
+.userNameBox{
+  outline: red dashed 1px;
+  float: left;
+  margin-left: 10rem;
+}
+.userContentBox {
+  outline: red dashed 1px;
+}
+
+.lineChartBox {
+  outline: red dashed 1px;
+}
+.noteCard{
+  outline: red dashed 1px;
+
+}
+
+/* ------------------- Notes Page CSS------------------------- */
+.notesBox {
+  margin: 0 auto;
+  margin-top: 6rem;
+  width: 80%;
+  height: 35rem;
+  padding-top: 9rem;
+
+  box-shadow: 0 0 1rem 0 rgb(103, 95, 130);
+  border-radius: 16px;
+}
+
+.form {
+  width: 50%;
+  border-radius: 10px;
+  padding: 1rem;
+  margin-top: 2rem;
 }

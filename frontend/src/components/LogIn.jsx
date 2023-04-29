@@ -4,7 +4,7 @@ import useFormInput from "../hooks/useFormInput";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-
+import EntryPage from "../pages/EntryPage";
 
 export default function LogIn(props) {
   const userEmailProps = useFormInput("");
@@ -16,7 +16,6 @@ export default function LogIn(props) {
   const [loginAttempts, setLoginAttempts] = React.useState(0);
   const nav = useNavigate();
 
-  
   const handleLogin = (e) => {
     e.preventDefault();
 
@@ -30,8 +29,8 @@ export default function LogIn(props) {
       .post("http://localhost:8001/user/login", { email, password })
       .then((response) => {
         let isLoggedIn = response.data.data.id;
-        console.log(userCurrent)
-        
+        console.log(userCurrent);
+
         if (!isLoggedIn) {
           let newAttempts = loginAttempts + 1;
 
@@ -44,19 +43,17 @@ export default function LogIn(props) {
         } else {
           setErrMsg("");
           handleUser(response.data.data);
-          
         }
 
-
         setLoggedIn(isLoggedIn);
-        isLoggedIn ? nav('/rating') : null
+        isLoggedIn ? nav("/rating") : null;
       });
-   
-    
   };
 
   return (
     <div className="LogInBox">
+      <h1>LOGOIN</h1>
+      <br/>
       {loggedIn ? <p>logging In</p> : null}
       {!loggedIn && loginAttempts < 5 && (
         <form onSubmit={handleLogin}>
@@ -83,16 +80,14 @@ export default function LogIn(props) {
               />
             </div>
           </div>
-          <button type="submit">login</button>
+          <button className="btn-primary" type="submit">
+            LogIn
+          </button>
         </form>
       )}
       <p>{errMsg}</p>
-      
-      <a
-        onClick={() => props.onPageSwitch("signup")}
-        className="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover"
-        href="#"
-      >
+
+      <a onClick={() => props.onPageSwitch("signup")}>
         Don't have an account? SignUp here
       </a>
     </div>

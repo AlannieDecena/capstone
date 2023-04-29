@@ -10,12 +10,12 @@ export default function LogOut() {
     const handleLogOut = () => {
         handleUser({}) ;
         // navgate('/login')
-        <NavLink to="/"/>
+        // <NavLink to="/"/>
     }
 
   return (
     <div>
-        <button onClick={handleLogOut}>LogOut</button>
+        <NavLink to="/" onClick={handleLogOut}>LogOut</NavLink>
     </div>
   )
 }

@@ -48,7 +48,7 @@ const LineChart = () => {
   };
 
   return (
-    <div>
+    <div className="lineChartBox">
       <Line data={data} />
      
     </div>

@@ -1,15 +1,14 @@
 import React from "react";
-import NavBar from "../components/NavBar";
-import LogIn from "../components/LogIn";
-import Signup from "../components/Signup";
+import LogInPage from "./logInPage";
+import capLogo from "../images/capLogo.png"
 
 export default function EntryPage() {
   return (
+    <>
+    <div className="glassBox">
     <div className="entryPage">
-      <NavBar />
-
-      <section>
-        <h1>Feeling Lanevder</h1>
+          <img className="caplogo" src={capLogo} alt="caplogo" ></img>
+        
         <p>
           Feeling Lavender is a personalized mood tracking app designed to help
           you manage your mental health and well-being with a comprehensive set
@@ -17,9 +16,10 @@ export default function EntryPage() {
           step towards achieving your mental wellness goals today with Feeling
           Lavender.
         </p>
-        <a href="/login"> Start your Journey</a>
-      </section>
-
+        <a >Wanna learn more?</a>
     </div>
+    <LogInPage/>
+    </div>
+    </>
   );
 }
