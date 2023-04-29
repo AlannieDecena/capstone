@@ -45,55 +45,51 @@ export default function Signup(props) {
 
   return (
     <div className="LogInBox">
-       <form onSubmit={handleSubmit}>
-       <div className="row mb-3">
-            {/* <label htmlFor="name" className="col-sm-2 col-form-label">
-              Full Name
-            </label> */}
-            <div className="col-sm-10">
-              <input
-                className="form-control"
-                onChange={(e) => setName(e.target.value)}
-                value={name}
-                id="name"
-                placeholder="name"
-              />
-            </div>
+      <h1>NEW ACCOUNT</h1>
+      <br />
+      <form onSubmit={handleSubmit}>
+        <div className="row mb-3">
+         
+          <div className="col-sm-10">
+            <input
+              className="form-control"
+              onChange={(e) => setName(e.target.value)}
+              value={name}
+              id="name"
+              placeholder="name"
+            />
           </div>
-          <div className="row mb-3">
-            {/* <label htmlFor="email" className="col-sm-2 col-form-label">
-              Email
-            </label> */}
-            <div className="col-sm-10">
-              <input
-                className="form-control"
-                onChange={(e) => setEmail(e.target.value)}
-                value={email}
-                id="email"
-                placeholder="email"
-              />
-            </div>
+        </div>
+        <div className="row mb-3">
+          
+          <div className="col-sm-10">
+            <input
+              className="form-control"
+              onChange={(e) => setEmail(e.target.value)}
+              value={email}
+              id="email"
+              placeholder="email"
+            />
           </div>
-          <div className="row mb-3">
-            {/* <label htmlFor="password" className="col-sm-2 col-form-label">
-              Password
-            </label> */}
-            <div className="col-sm-10">
-              <input
-                className="form-control"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                type="password"
-                id="password"
-                placeholder="password"
-              />
-            </div>
+        </div>
+        <div className="row mb-3">
+         
+          <div className="col-sm-10">
+            <input
+              className="form-control"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              type="password"
+              id="password"
+              placeholder="password"
+            />
           </div>
-          <button type="submit" onClick={handleSubmit} className="btn btn-primary">
-            Sign Up
-          </button>
-        </form>
-      <a onClick={() => props.onPageSwitch("login")} className="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="#" >
+        </div>
+        <button type="submit" onClick={handleSubmit} className="btn-primary">
+          Sign Up
+        </button>
+      </form>
+      <a onClick={() => props.onPageSwitch("login")}>
         Already have an account? LogIn here
       </a>
     </div>
