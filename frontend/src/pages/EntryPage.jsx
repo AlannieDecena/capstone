@@ -1,6 +1,7 @@
 import React from "react";
 import LogInPage from "./logInPage";
 import capLogo from "../images/capLogo.png"
+import { NavLink } from "react-router-dom";
 
 export default function EntryPage() {
   return (
@@ -16,7 +17,7 @@ export default function EntryPage() {
           step towards achieving your mental wellness goals today with Feeling
           Lavender.
         </p>
-        <a >Wanna learn more?</a>
+        <NavLink to="/about" >Learn more</NavLink>
     </div>
     <LogInPage/>
     </div>

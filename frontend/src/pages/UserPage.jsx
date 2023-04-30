@@ -5,35 +5,36 @@ import {useParams} from 'react-router-dom'
 import { useEffect, useState, useContext } from "react";
 import useFormInput from "../hooks/useFormInput";
 import Note from "../components/Note";
+import Goals from "../components/Goals";
 
 
 export default function UserPage() {
   const {userCurrent} = useContext(UserContext);
-  const userName = useFormInput("");
-  const params = useParams();
-  const id = params.id;
-  const [getUserName, setGetUserName] = useState('');
-
-    // useEffect(()=> {
-    //   axios.get("http://localhost:8001/user/1")
-    //   .then(response=> {console.log(response); setGetUserName(response.data.data[0])})
-    //   .catch(error => {console.log(error)})
-    //   },[])
-    //   console.log(getUserName)
 
 
   return (
-    <div className="UserPage">
+    <div id="UserPage">
       <SideBar />
   
-      <div className="contentUser">
-        <div className="userNameBox">
+      <div id="contentUserBox">
+        <div id="userNameBox">
         <h1>Hey {userCurrent.name}!</h1>
         </div>
-        <section className="userContentBox">
-          {/* <LineChart/>
-          <Note/> */}
-        </section>
+
+        <div id="ContentWrapper" class="row">
+          <div  id="noteBox" class="col-sm-8">
+          {/* <Note/> */}
+          </div>
+          <div id="goalBox" class="col-sm-4">
+          <Goals/>
+          </div>
+          
+          <div  id="dashChartBox"class="col-sm-8" >
+            <h5>Mood Overview</h5>
+            <LineChart/>
+          </div>
+          {/* <div class="col-6 col-md-4"></div> */}
+        </div>
       </div>
     </div>
   );

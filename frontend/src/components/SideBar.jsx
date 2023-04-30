@@ -15,10 +15,13 @@ export default function SideBar() {
           
         </li>
         <li>
-        <NavLink to="/displaynotes">Notes</NavLink>
+        <NavLink to="/displaynotes">Journal</NavLink>
         </li>
         <li>
-          <NavLink to="/displaymoods">Moods</NavLink>
+          <NavLink to="/displaymoods">Charts</NavLink>
+        </li>
+        <li>
+          <NavLink to="/goals">Goals</NavLink>
         </li>
         <li>
           <NavLink to="/">sign out</NavLink>
@@ -28,15 +31,6 @@ export default function SideBar() {
       
     </div>
 
-{/* <div className="contentUser">
-<section>
-  <h1>User Page</h1>
-
-  
-</section>
-
-<LogOut/>
-</div>  */}
 </>
   );
 }

@@ -19,17 +19,17 @@ export default function Rating() {
         {rating: 4},
         {rating: 5}
     ]
-const handleBackBtn = () => {
+const handleNextBtn = () => {
   nav('/notes')
 }
   return (
     <>
-    <div className="ratingBox">
+    <div className="ratingBox chart">
         <h3>How are you today?</h3>
         {emojiRating.map((emoji) => 
         <button className="btn-primary" key={emoji.rating}  onClick={() => dispatch(emoji.rating)}> {emoji.rating}</button>)}
-        <div>I'm feeling {mood}</div>
-        <button className="btn-primary" onClick={handleBackBtn}>Next</button>
+        <div className='getMoodText'>I'm feeling {mood}</ div>
+        <button className="btn-primary" onClick={handleNextBtn}>Next</button>
     </div>
           
         </>

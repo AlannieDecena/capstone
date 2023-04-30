@@ -11,6 +11,8 @@ import UserPage from "../pages/UserPage";
 import NotesPage from "../pages/NotesPage";
 import DisplayMoods from "../components/DisplayMoods";
 import Notes from "../components/Notes";
+import GoalsPage from "../pages/GoalsPage";
+import AboutPage from "../pages/AboutPage";
 
 function AppRoutes(props) {
   return (
@@ -23,6 +25,8 @@ function AppRoutes(props) {
       <Route path="/displaymoods" element={<DisplayMoods {...props} />} />
       <Route path="/displaynotes" element={<NotesPage {...props} />} />
       <Route path="/notes" element={<Notes {...props} />} />
+      <Route path="/goals" element={<GoalsPage {...props} />} />
+      <Route path="/about" element={<AboutPage {...props} />} />
       
 
       {/* <Route path="*" element={<PageNotFound />} /> */}

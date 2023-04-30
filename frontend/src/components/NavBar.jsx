@@ -11,13 +11,13 @@ export default function () {
         <ul className="nav justify-content-end">
           <li className="nav-item ">
             <a className="nav-link active" aria-current="page">
-              <NavLink to="/about">About</NavLink>
+              
             </a>
           </li>
           <li className="nav-item">
             <a className="nav-link">
               <li>
-                <NavLink to="/login">Login</NavLink>
+                <NavLink to="/">Login</NavLink>
               </li>
             </a>
           </li>

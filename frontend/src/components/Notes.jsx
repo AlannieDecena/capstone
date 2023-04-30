@@ -39,7 +39,7 @@ export default function Notes() {
         <label htmlFor="floatingTextarea2"></label>
       </div>
       <button className="btn-primary"  onClick={handleBackBtn}>back</button>
-      <button className="btn-primary" onClick={handleNoteSubmit}>submit</button>
+      <button className="btn-primary" onClick={handleNoteSubmit}>save</button>
       <button className="btn-primary" onClick={handleDoneBtn}>done</button>
       
     </div>

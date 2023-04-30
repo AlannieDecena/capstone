@@ -3,7 +3,7 @@ import { UserContext } from '../context/UserContext'
 import axios from 'axios'
 
 export default function useEmoji() {
-    const {userEmail} = useContext(UserContext)
+    const userCurrent = useContext(UserContext)
 
     const initialState='...'
     // const happy =(<div><img className='emoji' alt="happy" ></img>😊</div>)
@@ -12,15 +12,15 @@ export default function useEmoji() {
     const sad=(<div className='emoji' alt="sad" >Sad</div>)
     const neutral =(<div className='emoji' alt="neutral" >Neutral</div>)
     const mehh =(<div className='emoji'  alt="mehh"><p>Mehh</p></div>)
-    const excited =(<div className='emoji'  alt="excited"><p>excited</p></div>)
+    const ecstatic =(<div className='emoji'  alt="ecstatic"><p>Ecstatic</p></div>)
     const handleRating = (emoji) => {
 
         
-        console.log(userEmail)
-           const moodData = {'mood': emoji, 'userId': userEmail}   
+        console.log(userCurrent)
+           const moodData = {'mood': emoji, 'userId': userCurrent}   
             axios.post('http://localhost:8001/mood/update', moodData ) 
             .then(response => {
-                console.log(response); })
+                console.log(response.data); })
                 .catch(error => { console.log(error) })};
 
     const reducer=(state,action) => {
@@ -39,7 +39,7 @@ export default function useEmoji() {
                 return happy
             case 5: 
                 handleRating(5)
-                return excited
+                return ecstatic
             default:
                 return state}
         }

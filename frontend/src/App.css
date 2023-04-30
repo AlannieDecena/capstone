@@ -10,13 +10,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: 'Nunito', sans-serif;
+  font-family: "Nunito", sans-serif;
   flex-direction: column;
   background: linear-gradient(
     0deg,
     rgba(113, 101, 177, 1) 0%,
-    /* var(--vista-blue) 73% */
-    rgba(190, 164, 211, 1) 73%
+    /* var(--vista-blue) 73% */ rgba(190, 164, 211, 1) 73%
   );
 }
 
@@ -24,7 +23,6 @@
   width: inherit;
   height: inherit;
 }
-
 
 :root {
   /* CSS HEX */
@@ -53,10 +51,29 @@
   /* border: 1px solid var(--vista-blue); */
 }
 
-/* h1 {
-  color: red;
-  font-weight: bolder;
-} */
+.addBtn {
+  width: 5rem;
+  border: none;
+  border-radius: 5px;
+  /* height: 0%; */
+}
+
+.addBtn:hover {
+  background-color: var(--slate-blue);
+  color: white;
+}
+
+h1,
+h3, h2{
+  color: var(--slate-blue);
+  /* text-shadow: 1px 1px 1px red, 2px 2px 1px red; */
+  font-weight: 800 !important;
+  /* text-align: justify; */
+}
+
+p{
+  text-align: justify;
+}
 
 /* h3 {
   color: red;
@@ -64,9 +81,12 @@
 } */
 
 a {
-  text-decoration: none;
+  text-decoration: none !important;
+  color: rebeccapurple !important;
   font-size: 0.78rem;
-  
+  /* text-shadow: 1px 1px 1px var(--slate-blue); */
+  ;
+
 }
 
 a:hover {
@@ -78,13 +98,12 @@ img {
   width: 13rem;
   align-self: center;
   margin-bottom: 1rem;
-
 }
 
 .sideLogo {
   width: 8rem;
   /* align-self: center; */
-  margin-top: 20rem;
+  margin-top: 15rem;
   margin-right: 1.3rem;
 }
 
@@ -92,23 +111,21 @@ img {
 .navBar {
   display: flex;
   justify-content: space-between;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
-section {
-  width: 100%;
-  /* height: 100%; */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  /* background-color: red; */
+.navBar a {
+  font-size: .85rem;
 }
 
 h6 {
   padding-left: 1rem;
+  padding-top: .35rem;
   align-items: center;
   display: flex;
   justify-content: center;
+  color: rebeccapurple;
 }
 
 .componentBox {
@@ -126,11 +143,57 @@ h6 {
   width: 80%;
   height: 35rem;
   padding-top: 9rem;
+  outline: red dashed 1px;
 
   box-shadow: 0 0 1rem 0 rgb(103, 95, 130);
   border-radius: 16px;
-  
 }
+
+.getMoodText {
+  width: 20rem;
+  /* text-align: center; */
+  outline: red dashed 1px;
+}
+
+.moodPageBox {
+  /* outline: red dashed 1px; */
+  width: 90%;
+  height: inherit;
+  float: right;
+  background-color: white;
+  /* outline: red dashed 1px; */
+
+}
+.moodTitleBox h1 {
+  float: left;
+  margin-left: 10rem;
+  /* width: 90%; */
+  /* outline: red dashed 1px; */
+
+  /* TEXT */
+  font-weight: 700;
+  margin-top: 1rem;
+  /* outline: red dashed 1px; */
+}
+
+.chartBox {
+  /* outline: blue dashed 1px; */
+  width: 70%;
+  height: 60%;
+  margin: 0 auto;
+  margin-top: 9rem;
+  padding: 1rem;
+
+  box-shadow: 0 0 1rem 0 rgb(103, 95, 130);
+  border-radius: 16px;
+  background-color: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(5px);
+}
+
+/* .chart{
+  margin: 0 auto;
+} */
+
 /* -------------------LogIn / SignUp / Entry page CSS------------------------- */
 
 .entryPage {
@@ -156,7 +219,8 @@ h6 {
   padding: 1em;
   width: inherit;
   height: 35rem;
-  background-color: var(--pale-purple);
+  /* background-color: var(--pale-purple); */
+  background-color: rgb(242, 239, 251);
   border-radius: 16px;
 
   display: flex;
@@ -173,7 +237,6 @@ h6 {
   box-shadow: 0 0 1rem 0 rgb(103, 95, 130);
   border-radius: 16px;
   background-color: rgba(255, 255, 255, 0.4);
-  /* background-color: rgba(255, 255, 255, 0.316); */
   backdrop-filter: blur(5px);
 }
 
@@ -182,11 +245,12 @@ h6 {
   width: 200px;
   height: 100%;
   position: absolute;
+  border-top-right-radius: 16px;
+  border-bottom-right-radius: 16px;
   background: linear-gradient(
     0deg,
     rgba(113, 101, 177, 1) 0%,
-    /* var(--vista-blue) 73% */
-    rgba(190, 164, 211, 1) 73%
+    /* var(--vista-blue) 73% */ rgba(190, 164, 211, 1) 73%
   );
 }
 .sideMenu {
@@ -208,7 +272,7 @@ h6 {
   position: absolute;
 }
 .sideMenu > li:hover {
-  background:white;
+  background: white;
   border-radius: 60px 0 0 60px;
 }
 .sideMenu > li > a {
@@ -216,7 +280,7 @@ h6 {
   /* font-family: "Source Sans Pro", sans-serif; */
   color: rebeccapurple;
   text-decoration: none;
-  font-size: .90rem;
+  font-size: 0.9rem;
 }
 .sideMenu > li:hover > a {
   color: rebeccapurple;
@@ -230,12 +294,9 @@ h6 {
   -moz-border-bottom-right-radius: 80px;
   -webkit-border-bottom-right-radius: 80px;
   -webkit-box-shadow: 0 40px 0 0 white;
-  -moz-box-shadow:0 40px 0 0 white;
-  box-shadow:0 40px 0 0 white;
-   /* -webkit-box-shadow: 0 40px 0 0 #ffe2ac;
-  -moz-box-shadow: 0 40px 0 0 #ffe2ac;
-  box-shadow: 0 40px 0 0 #ffe2ac; */
-} 
+  -moz-box-shadow: 0 40px 0 0 white;
+  box-shadow: 0 40px 0 0 white;
+}
 .sideMenu > li:hover::after {
   top: 50px;
   right: -1px;
@@ -244,47 +305,103 @@ h6 {
   border-top-right-radius: 80px;
   -moz-border-top-right-radius: 80px;
   -webkit-border-top-right-radius: 80px;
-  -webkit-box-shadow: 0 -40px 0 0  white;
-  -moz-box-shadow: 0 -40px 0 0  white;
-  box-shadow: 0 -40px 0 0  white;
-  /* -webkit-box-shadow: 0 -40px 0 0 #ffe2ac;
-  -moz-box-shadow: 0 -40px 0 0 #ffe2ac;
-  box-shadow: 0 -40px 0 0 #ffe2ac; */
+  -webkit-box-shadow: 0 -40px 0 0 white;
+  -moz-box-shadow: 0 -40px 0 0 white;
+  box-shadow: 0 -40px 0 0 white;
 }
 
 /* -------------------User Page CSS------------------------- */
 
-.UserPage {
+#UserPage {
   width: inherit;
-  height: inherit;
-  background-color: white ;
+  height: 100%;
+  background-color: white;
+  outline: rgb(28, 2, 79) dashed 1px;
   
 }
 
-.contentUser {
+#contentUserBox {
   /* margin-right: auto; */
   margin-left: auto;
-  width: 90%;
-  height: 100%;
-  
+  width: 100%;
+  height: 90%;
+  outline: rgb(28, 2, 79) dashed 1px;
+  /* background-color: rebeccapurple; */
 }
-.userNameBox{
+#userNameBox h1 {
   outline: red dashed 1px;
   float: left;
-  margin-left: 10rem;
+  margin-left: 20rem;
+  /* font-weight: 700; */
+  margin-top: 1rem;
 }
-.userContentBox {
-  outline: red dashed 1px;
+#ContentWrapper {
+/* outline: yellow dashed 1px; */
+    width: 80%;
+    height: 100%;
+    float: right;   height: 100%;
+    /* background-color: rebeccapurple; */
+    margin: 0;
+    margin-right: 3rem;
+    /* margin-top: 1rem; */
+}
+
+#noteBox {
+  outline: blue dashed 1px;
+  /* width: 80%;
+  height: 60%; */
+  /* background-color: rgb(56, 56, 105); */
+  box-shadow: 0 0 1rem 0 rgb(103, 95, 130);
+  border-radius: 16px;
+  background-color: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(5px);
+  /* margin: 1rem; */
+}
+
+#dashChartBox{
+  /* margin-top: 1rem; */
+  outline: rgb(95, 57, 63) dashed 1px;
+  padding: 4rem;
+  /* width: 60%;
+  height: 60%; */
+  /* background-color:rgb(218, 166, 175); */
+/* justify-content: center;
+    align-items: center;
+    display: flex;
+    box-shadow: 0 0 1rem 0 rgb(103, 95, 130);
+    border-radius: 16px;
+    background-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(5px); */
+
+}
+
+#dashChartBox h5 {
+  float: left;
 }
 
 .lineChartBox {
-  outline: red dashed 1px;
+  width: 40rem;
+  justify-content: center;
+    align-items: center;
+    display: flex;
+    box-shadow: 0 0 1rem 0 rgb(103, 95, 130);
+    border-radius: 16px;
+    background-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(5px);
+  /* height: auto; */
 }
-.noteCard{
-  outline: red dashed 1px;
+
+#goalBox{
+  /* background-color:rgb(215, 58, 84); */
+  outline: rgb(15, 67, 6) dashed 1px;
+  box-shadow: 0 0 1rem 0 rgb(103, 95, 130);
+  border-radius: 16px;
+  background-color: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(5px);
+  /* margin: 1px; */
 
 }
-
+  
 /* ------------------- Notes Page CSS------------------------- */
 .notesBox {
   margin: 0 auto;
@@ -302,4 +419,144 @@ h6 {
   border-radius: 10px;
   padding: 1rem;
   margin-top: 2rem;
+}
+
+/* ------------------- Goals Page CSS------------------------- */
+.goalsPage {
+  width: 100%;
+  height: 100%;
+  /* padding-top: 15rem; */
+  background-color: white;
+
+  
+}
+
+#vstack   {
+  /* outline: red dashed 1px; */
+  width: 50%;
+  height: 50%;
+  margin-right: 15rem;
+  margin-top: 8rem;
+  float: right;
+   /*display: flex;
+  justify-content: center;
+  align-items: center; */
+  box-shadow: 0 0 1rem 0 rgb(103, 95, 130);
+  border-radius: 16px;
+  position: relative;
+  
+}
+#vstack {
+  margin-bottom: 2rem;
+  background-color: var(--pale-purple);
+}
+
+#goalHeader{
+  margin-left: 20rem;
+  margin-top: 1rem;
+  float: left;
+}
+
+
+#addGoalBox{
+  /* outline: red dashed 1px; */
+  width: 100%;
+ 
+  right: 0;
+  left: 0;
+ 
+  bottom: 0;
+  position: relative;
+  box-shadow: 0 0 .75rem 0 rgb(103, 95, 130);
+  border-radius: 5px;
+}
+
+.bottom{
+  width: 50%;
+  height: 0%;
+  margin-right: 15rem;
+ 
+  float: right;
+  
+  /* box-shadow: 0 0 1rem 0 rgb(103, 95, 130); */
+  border-radius: 16px;
+  position: relative;
+}
+
+#flexCheckChecked {margin-right: 1rem;}
+#deleteBtn {margin-left: 1rem;}
+
+
+/* ------------------- About Page CSS------------------------- */
+
+.aboutPage {
+  width: 100%;
+  height: 100%;
+  
+  outline: red dashed 1px;
+}
+
+.nameMeaning{
+  width: 100%;
+  height: 50%;
+  padding: 3rem;
+  /* outline: red dashed 1px;  */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+
+  background-image: url("./images/lav-w-L.png");
+  background-repeat: no-repeat, repeat;
+  background-size: 10rem;
+  background-position: bottom;
+  background-position-x: 4% ;
+  background-position-y: 100px ;
+ 
+}
+
+.nameMeaning h1 {
+  width: 50%;
+}
+.nameMeaning p {
+  width: 50%;
+  /* outline: red dashed 1px;  */
+  text-align: justify;
+
+}
+
+.aboutUs {
+  width: 100%;
+  height: 21.5rem;
+  padding-top: 3rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+ 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row-reverse;
+
+  background-color: aliceblue;
+  border-top-right-radius: 16px;
+  border-top-left-radius: 16px;
+  box-shadow: 0 0 1rem 0 rgb(103, 95, 130);
+
+  background-image: url("./images/lav.png");
+  background-repeat: no-repeat, repeat;
+  background-size: 10rem;
+  background-position: bottom;
+  background-position-x: 95% ;
+  background-position-y: 100px ;
+}
+
+.aboutUs h1{
+  width: 50%;
+  /* outline: red dashed 1px;  */
+
+}
+.aboutUs p{
+  width: 50%;
+  /* outline: red dashed 1px;  */
+  /* text-align: justify; */
 }
