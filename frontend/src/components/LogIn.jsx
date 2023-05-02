@@ -4,7 +4,7 @@ import useFormInput from "../hooks/useFormInput";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import EntryPage from "../pages/EntryPage";
+// This component is for checking the user exists if they do they can login
 
 export default function LogIn(props) {
   const userEmailProps = useFormInput("");
@@ -29,7 +29,7 @@ export default function LogIn(props) {
       .post("http://localhost:8001/user/login", { email, password })
       .then((response) => {
         let isLoggedIn = response.data.data.id;
-        console.log(userCurrent);
+        console.log(response.data.data)
 
         if (!isLoggedIn) {
           let newAttempts = loginAttempts + 1;
@@ -42,7 +42,9 @@ export default function LogIn(props) {
           setLoginAttempts(newAttempts);
         } else {
           setErrMsg("");
+          
           handleUser(response.data.data);
+          console.log(userCurrent);
         }
 
         setLoggedIn(isLoggedIn);

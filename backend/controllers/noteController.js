@@ -18,6 +18,14 @@ const getNoteID = (req, res) => {
     })
 }
 
+const getUserNotes = (req, res) => {
+    Models.Note.findAll({where: { userId: req.params.userId }}).then(function (data) {
+        res.send({ result: 200, data: data })
+    }).catch(err => {
+        throw err
+    })
+}
+
 const createNote = (data, res) => {
     
     Models.Note.create(data).then(function (data) {
@@ -52,5 +60,5 @@ const deleteNote = (req, res) => {
 }
 
 module.exports = {
-    getNote, getNoteID, createNote, updateNote, deleteNote
+    getNote, getNoteID, createNote, updateNote, deleteNote, getUserNotes
 }

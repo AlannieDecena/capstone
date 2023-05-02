@@ -1,11 +1,10 @@
 import SideBar from "../components/SideBar";
 import LineChart from "../components/LineChat";
 import { UserContext} from "../context/UserContext";
-import {useParams} from 'react-router-dom'
 import { useEffect, useState, useContext } from "react";
-import useFormInput from "../hooks/useFormInput";
-import Note from "../components/Note";
-import Goals from "../components/Goals";
+import Goals from "../components/DisplayGoals";
+import DisplayNotes from "../components/DisplayNotes";
+// This is the users dashboard page 
 
 
 export default function UserPage() {
@@ -13,29 +12,31 @@ export default function UserPage() {
 
 
   return (
+    <> 
+    <SideBar />
     <div id="UserPage">
-      <SideBar />
+     
   
       <div id="contentUserBox">
         <div id="userNameBox">
         <h1>Hey {userCurrent.name}!</h1>
         </div>
 
-        <div id="ContentWrapper" class="row">
-          <div  id="noteBox" class="col-sm-8">
-          {/* <Note/> */}
+        <div id="contentWrapper" >
+          <div  id="noteBox" >
+          <DisplayNotes/>
           </div>
-          <div id="goalBox" class="col-sm-4">
-          <Goals/>
+          {/* <div id="goalBox" >
+          <div >
+          <Goals/></div>
           </div>
           
-          <div  id="dashChartBox"class="col-sm-8" >
-            <h5>Mood Overview</h5>
+          <div  id="dashChartBox" >
             <LineChart/>
-          </div>
-          {/* <div class="col-6 col-md-4"></div> */}
+          </div> */}
+         
         </div>
       </div>
-    </div>
+    </div></>
   );
 }

@@ -15,12 +15,9 @@ Goal.init({
         type: DataTypes.STRING, allowNull: false, required: true,
      
     },
-    dateStart: {
-        type: DataTypes.DATE, allowNull: false, required: false
-    },
 
-    dateEnd: {
-        type: DataTypes.DATE, allowNull: false, required: false
+    checked: {
+        type: DataTypes.BOOLEAN, allowNull: true, required: true
     },
 
     userId: {

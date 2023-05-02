@@ -27,6 +27,14 @@ const createGoal = (data, res) => {
     })
 }
 
+const userGoalID = (req, res) => {
+    Models.Goal.findAll({where: { userId: req.params.id }}).then(function (data) {
+        res.send({ result: 200, data: data })
+    }).catch(err => {
+        throw err
+    })
+}
+
 const updateGoal = (req, res) => {
    
     Models.Goal.update(req.body, {
@@ -51,5 +59,5 @@ const deleteGoal = (req, res) => {
 }
 
 module.exports = {
-    getGoal, getGoalID, createGoal, updateGoal, deleteGoal
+    getGoal, getGoalID, createGoal, updateGoal, deleteGoal, userGoalID
 }

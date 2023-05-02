@@ -1,5 +1,6 @@
 import React from "react";
 import NavBar from "../components/NavBar";
+// this the about page
 
 export default function AboutPage() {
   return (

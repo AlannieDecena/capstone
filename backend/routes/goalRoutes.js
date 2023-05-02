@@ -13,6 +13,7 @@ router.get('/:id', (req, res) => {
 })
 
 router.post('/create', (req, res) => {
+    // console.log(req.body)
     Controllers.createGoal(req.body, res)
 })
 
@@ -24,5 +25,8 @@ router.delete('/delete/:id', (req, res) => {
     Controllers.deleteGoal(req, res)
 })
 
+router.get('/user/:id', (req, res) => {
+    Controllers.userGoalID(req, res);
+})
 
 module.exports = router;

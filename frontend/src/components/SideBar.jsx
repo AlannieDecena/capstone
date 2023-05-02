@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate, NavLink } from "react-router-dom";
-import LogOut from "../components/LogOut";
 import capLogo from "../images/capLogo.png"
+// This the sidebar for the users bashboard
 
 export default function SideBar() {
     const nav = useNavigate()
@@ -15,13 +15,16 @@ export default function SideBar() {
           
         </li>
         <li>
-        <NavLink to="/displaynotes">Journal</NavLink>
+        <NavLink to="/notes">Journal</NavLink>
         </li>
         <li>
           <NavLink to="/displaymoods">Charts</NavLink>
         </li>
         <li>
           <NavLink to="/goals">Goals</NavLink>
+        </li>
+        <li>
+          <NavLink to="/changemood">Mood</NavLink>
         </li>
         <li>
           <NavLink to="/">sign out</NavLink>

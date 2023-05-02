@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { UserContext } from "../context/UserContext";
 import useFormInput from "../hooks/useFormInput";
 import axios from "axios";
+// This component is for creating a new user and storing it in the database
 
 export default function Signup(props) {
   const [name, setName] = useState("");

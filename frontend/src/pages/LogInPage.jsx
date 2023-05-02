@@ -5,8 +5,7 @@ import LogIn from '../components/LogIn';
 import Signup from '../components/Signup';
 import 'bootstrap/dist/css/bootstrap.css';
 import LogOut from '../components/LogOut';
-import EntryPage from './EntryPage';
-import NavBar from '../components/NavBar';
+// this page holds the log in and sign up pages which the user can toggle between.
 
 
 

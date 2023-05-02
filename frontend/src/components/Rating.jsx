@@ -3,8 +3,13 @@ import axios from 'axios';
 import { UserContext } from '../context/UserContext';
 import useEmoji from '../hooks/useEmoji';
 import { useNavigate } from 'react-router-dom';
-
-
+import angry from '../images/angry.png'
+import sad from '../images/sad.png'
+import happy from '../images/happy.png'
+import mehh from '../images/mehh.png'
+import chill from '../images/chill.png'
+import ecstatic from '../images/ecstatic.png'
+// This component is for handling the mood ratings and store it in the database
 
 
 export default function Rating() {
@@ -13,25 +18,28 @@ export default function Rating() {
     const nav = useNavigate()
 
     const emojiRating = [
-        {rating: 1}, 
-        {rating: 2},
-        {rating: 3},
-        {rating: 4},
-        {rating: 5}
+        {rating: 1, face: `${angry}`}, 
+        {rating: 2, face: `${sad}`},
+        {rating: 3, face: `${mehh}`}, 
+        {rating: 4, face: `${happy}`},
+        {rating: 5, face: `${chill}`},
+        {rating: 6, face: `${ecstatic}`}
     ]
 const handleNextBtn = () => {
-  nav('/notes')
+  nav('/user')
 }
   return (
-    <>
+   
     <div className="ratingBox chart">
         <h3>How are you today?</h3>
+        <div id='getMoodText'>I'm feeling {mood}</ div>
         {emojiRating.map((emoji) => 
-        <button className="btn-primary" key={emoji.rating}  onClick={() => dispatch(emoji.rating)}> {emoji.rating}</button>)}
-        <div className='getMoodText'>I'm feeling {mood}</ div>
-        <button className="btn-primary" onClick={handleNextBtn}>Next</button>
+        <div id="emoBtn" key={emoji.rating}  onClick={() => dispatch(emoji.rating)}> <img id="emoImg" src={emoji.face} alt="" /> </div>)}
+        <div>
+        <button className="btn-primary" onClick={handleNextBtn}>Done</button>
+        </div>
     </div>
           
-        </>
+       
   )
 }

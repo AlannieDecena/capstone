@@ -9,7 +9,12 @@ router.get('/', (req, res) => {
 })
 
 router.get('/:id', (req, res) => {
-    Controllers.getNoteID(req, res);
+    console.log(req.params.id)
+    // Controllers.getNoteID(req, res);
+})
+
+router.get('/user/:userId', (req, res) => {
+    Controllers.getUserNotes(req, res);
 })
 
 router.post('/create', (req, res) => {

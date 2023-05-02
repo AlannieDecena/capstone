@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
+// this component the navbar for the abouts page
 
 export default function () {
   return (

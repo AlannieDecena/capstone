@@ -30,6 +30,7 @@ const createMood = (data, res) => {
 }
 
 const updateMood = (req, res) => {
+    // console.log(req.body.mood)
     const newtoday = new Date()
     Models.Mood.findOrCreate(
         {where: {[Op.and] : [ { userId: req.body.userId }, 

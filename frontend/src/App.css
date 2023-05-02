@@ -35,6 +35,27 @@
 }
 
 /* -------------------Buttons / Texts / Images CSS------------------------- */
+
+button {
+  border: none;
+  background-color: none;
+}
+
+#emoBtn {
+  display: inline;
+}
+#emoImg {
+  width: 3rem;
+  height: 4rem;
+  margin: 1rem;
+}
+#emoImg:hover {
+  box-shadow: 0 0 0.75rem 0 var(--pale-purple);
+  border-radius: 50%;
+  /* width: 3.5rem;
+  height: 4.5rem; */
+}
+
 .btn-primary {
   width: 5rem;
   height: 2rem;
@@ -64,14 +85,15 @@
 }
 
 h1,
-h3, h2{
+h3,
+h2 {
   color: var(--slate-blue);
   /* text-shadow: 1px 1px 1px red, 2px 2px 1px red; */
   font-weight: 800 !important;
   /* text-align: justify; */
 }
 
-p{
+p {
   text-align: justify;
 }
 
@@ -85,8 +107,6 @@ a {
   color: rebeccapurple !important;
   font-size: 0.78rem;
   /* text-shadow: 1px 1px 1px var(--slate-blue); */
-  ;
-
 }
 
 a:hover {
@@ -103,7 +123,7 @@ img {
 .sideLogo {
   width: 8rem;
   /* align-self: center; */
-  margin-top: 15rem;
+  margin-top: 10rem;
   margin-right: 1.3rem;
 }
 
@@ -116,12 +136,12 @@ img {
 }
 
 .navBar a {
-  font-size: .85rem;
+  font-size: 0.85rem;
 }
 
 h6 {
   padding-left: 1rem;
-  padding-top: .35rem;
+  padding-top: 0.35rem;
   align-items: center;
   display: flex;
   justify-content: center;
@@ -149,10 +169,20 @@ h6 {
   border-radius: 16px;
 }
 
-.getMoodText {
-  width: 20rem;
+#getMoodText {
+  width: 9rem;
   /* text-align: center; */
-  outline: red dashed 1px;
+  /* outline: red dashed 1px; */
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+}
+
+#moodPage {
+  background-color: white;
+  width: 90%;
+  height: 100%;
+  float: right;;
 }
 
 .moodPageBox {
@@ -162,7 +192,6 @@ h6 {
   float: right;
   background-color: white;
   /* outline: red dashed 1px; */
-
 }
 .moodTitleBox h1 {
   float: left;
@@ -183,11 +212,11 @@ h6 {
   margin: 0 auto;
   margin-top: 9rem;
   padding: 1rem;
-
+  /* 
   box-shadow: 0 0 1rem 0 rgb(103, 95, 130);
   border-radius: 16px;
   background-color: rgba(255, 255, 255, 0.4);
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px); */
 }
 
 /* .chart{
@@ -240,7 +269,7 @@ h6 {
   backdrop-filter: blur(5px);
 }
 
-/* -------------------side Menu CSS------------------------- */
+/* -------------------side Bar CSS------------------------- */
 .sideDiv {
   width: 200px;
   height: 100%;
@@ -290,11 +319,22 @@ h6 {
   right: -1px;
   height: 80px;
   width: 40px;
+  /* Setting the radius of the bottom-right corner of the element to be 80px */
   border-bottom-right-radius: 80px;
+
+  /* Setting the radius of the bottom-right corner of the element to be 80px for Mozilla Firefox */
   -moz-border-bottom-right-radius: 80px;
+
+  /* Setting the radius of the bottom-right corner of the element to be 80px for WebKit browsers */
   -webkit-border-bottom-right-radius: 80px;
+
+  /* Adding a white shadow below the element to create a 3D effect */
   -webkit-box-shadow: 0 40px 0 0 white;
+
+  /* Adding a white shadow below the element to create a 3D effect for Mozilla Firefox */
   -moz-box-shadow: 0 40px 0 0 white;
+
+  /* Adding a white shadow below the element to create a 3D effect */
   box-shadow: 0 40px 0 0 white;
 }
 .sideMenu > li:hover::after {
@@ -310,69 +350,84 @@ h6 {
   box-shadow: 0 -40px 0 0 white;
 }
 
+.sideMenu > li:hover::after {
+  top: 50px;
+  right: -1px;
+  height: 80px;
+  width: 40px;
+  border-top-right-radius: 80px;
+  -moz-border-top-right-radius: 80px;
+  -webkit-border-top-right-radius: 80px;
+  -webkit-box-shadow: 0 -40px 0 0 white;
+  -moz-box-shadow: 0 -40px 0 0 white;
+  box-shadow: 0 -40px 0 0 white;
+}
+
 /* -------------------User Page CSS------------------------- */
 
-#UserPage {
-  width: inherit;
+ #UserPage {
+  width: 90%;
   height: 100%;
   background-color: white;
   outline: rgb(28, 2, 79) dashed 1px;
-  
+  float: right;
 }
 
 #contentUserBox {
-  /* margin-right: auto; */
+  margin-right: auto;
   margin-left: auto;
   width: 100%;
   height: 90%;
   outline: rgb(28, 2, 79) dashed 1px;
-  /* background-color: rebeccapurple; */
+  background-color: rebeccapurple;
 }
 #userNameBox h1 {
   outline: red dashed 1px;
   float: left;
-  margin-left: 20rem;
-  /* font-weight: 700; */
+  margin-left: 5rem;
+
   margin-top: 1rem;
 }
-#ContentWrapper {
-/* outline: yellow dashed 1px; */
-    width: 80%;
-    height: 100%;
-    float: right;   height: 100%;
-    /* background-color: rebeccapurple; */
-    margin: 0;
-    margin-right: 3rem;
-    /* margin-top: 1rem; */
+#contentWrapper {
+  outline: yellow dashed 1px;
+  width: 80%;
+  /* height: 100%; */
+  float: right;
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: center;
+  align-items: center; */
+  /* margin: 0;
+  margin-right: 3rem;
+  margin-top: 1rem; */
 }
 
 #noteBox {
   outline: blue dashed 1px;
-  /* width: 80%;
-  height: 60%; */
-  /* background-color: rgb(56, 56, 105); */
+  width: 80%;
+  height: 60%;
+  background-color: rgb(56, 56, 105);
   box-shadow: 0 0 1rem 0 rgb(103, 95, 130);
   border-radius: 16px;
   background-color: rgba(255, 255, 255, 0.4);
   backdrop-filter: blur(5px);
-  /* margin: 1rem; */
+  margin: 1rem;
 }
 
-#dashChartBox{
-  /* margin-top: 1rem; */
+/*#dashChartBox {
+  margin-top: 1rem;
   outline: rgb(95, 57, 63) dashed 1px;
-  padding: 4rem;
-  /* width: 60%;
-  height: 60%; */
-  /* background-color:rgb(218, 166, 175); */
-/* justify-content: center;
+ 
+  width: 60%;
+  height: 60%; 
+  background-color:rgb(218, 166, 175);
+ justify-content: center;
     align-items: center;
     display: flex;
     box-shadow: 0 0 1rem 0 rgb(103, 95, 130);
     border-radius: 16px;
     background-color: rgba(255, 255, 255, 0.4);
-    backdrop-filter: blur(5px); */
-
+    backdrop-filter: blur(5px);
 }
 
 #dashChartBox h5 {
@@ -382,27 +437,36 @@ h6 {
 .lineChartBox {
   width: 40rem;
   justify-content: center;
-    align-items: center;
-    display: flex;
-    box-shadow: 0 0 1rem 0 rgb(103, 95, 130);
-    border-radius: 16px;
-    background-color: rgba(255, 255, 255, 0.4);
-    backdrop-filter: blur(5px);
-  /* height: auto; */
+  align-items: center;
+  display: flex;
+  box-shadow: 0 0 1rem 0 rgb(103, 95, 130);
+  border-radius: 16px;
+  background-color: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(5px);
+  height: auto;
 }
-
-#goalBox{
-  /* background-color:rgb(215, 58, 84); */
+for user page
+#goalBox {
+  background-color:rgb(215, 58, 84);
   outline: rgb(15, 67, 6) dashed 1px;
   box-shadow: 0 0 1rem 0 rgb(103, 95, 130);
   border-radius: 16px;
   background-color: rgba(255, 255, 255, 0.4);
   backdrop-filter: blur(5px);
-  /* margin: 1px; */
+  display: -webkit-box;
+  padding-left: 2rem;
+} */
 
-}
-  
 /* ------------------- Notes Page CSS------------------------- */
+
+#notesPage {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: white;
+}
+
 .notesBox {
   margin: 0 auto;
   margin-top: 6rem;
@@ -410,7 +474,7 @@ h6 {
   height: 35rem;
   padding-top: 9rem;
 
-  box-shadow: 0 0 1rem 0 rgb(103, 95, 130);
+  /* box-shadow: 0 0 1rem 0 rgb(103, 95, 130); */
   border-radius: 16px;
 }
 
@@ -420,83 +484,118 @@ h6 {
   padding: 1rem;
   margin-top: 2rem;
 }
+#cardWrapper {
+  /* width: 65%; */
+  height: 50%;
+  /* margin-left: 17rem;
+  margin-top: 9rem;
+  float: right; */
+
+  border-radius: 10px;
+  background-color: #aaa;
+  box-shadow: 0 0 1rem 0 rgb(103, 95, 130);
+}
+
+#noteCard {
+  border-bottom: rgb(95, 57, 63) dashed 1px;
+}
+
+#noteCard p {
+  margin: .50rem;
+}
+#noteCard p a {
+  margin-left: 1rem;
+}
 
 /* ------------------- Goals Page CSS------------------------- */
 .goalsPage {
-  width: 100%;
-  height: 100%;
-  /* padding-top: 15rem; */
   background-color: white;
-
-  
+  margin: 0 auto;
+  width: 90%;
+  height: 100%;
+  float: right;
+  /* padding-top: 5rem; */
+  padding-left: 2rem;
 }
 
-#vstack   {
+#vstack {
   /* outline: red dashed 1px; */
-  width: 50%;
-  height: 50%;
-  margin-right: 15rem;
-  margin-top: 8rem;
-  float: right;
-   /*display: flex;
+  /* width: 50%; */
+  /* height: 50%; */
+  /* margin-right: 15rem; */
+  /* margin-top: 8rem; */
+  /* float: right; */
+  /*display: flex;
   justify-content: center;
   align-items: center; */
   box-shadow: 0 0 1rem 0 rgb(103, 95, 130);
   border-radius: 16px;
   position: relative;
-  
 }
 #vstack {
   margin-bottom: 2rem;
   background-color: var(--pale-purple);
 }
 
-#goalHeader{
-  margin-left: 20rem;
+#goalHeader {
+  margin-left: 8rem;
   margin-top: 1rem;
   float: left;
+  /* margin-bottom: 5rem; */
 }
 
-
-#addGoalBox{
+#addGoalBox {
   /* outline: red dashed 1px; */
   width: 100%;
- 
+
   right: 0;
-  left: 0;
- 
+  left: 8rem;
+
   bottom: 0;
   position: relative;
-  box-shadow: 0 0 .75rem 0 rgb(103, 95, 130);
+  box-shadow: 0 0 0.75rem 0 rgb(103, 95, 130);
   border-radius: 5px;
 }
 
-.bottom{
+.bottom {
   width: 50%;
   height: 0%;
   margin-right: 15rem;
- 
+
   float: right;
-  
+
   /* box-shadow: 0 0 1rem 0 rgb(103, 95, 130); */
   border-radius: 16px;
   position: relative;
 }
 
-#flexCheckChecked {margin-right: 1rem;}
-#deleteBtn {margin-left: 1rem;}
+#flexCheckChecked {
+  margin-right: 1rem;
+}
+#deleteBtn {
+  margin-left: 1rem;
+}
+#goalWrapper {
+  width: 100%;
+  height: 60%;
+  outline: red dashed 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 
+}
 
 /* ------------------- About Page CSS------------------------- */
 
 .aboutPage {
   width: 100%;
   height: 100%;
-  
+
   outline: red dashed 1px;
 }
 
-.nameMeaning{
+.nameMeaning {
   width: 100%;
   height: 50%;
   padding: 3rem;
@@ -510,9 +609,8 @@ h6 {
   background-repeat: no-repeat, repeat;
   background-size: 10rem;
   background-position: bottom;
-  background-position-x: 4% ;
-  background-position-y: 100px ;
- 
+  background-position-x: 4%;
+  background-position-y: 100px;
 }
 
 .nameMeaning h1 {
@@ -522,7 +620,6 @@ h6 {
   width: 50%;
   /* outline: red dashed 1px;  */
   text-align: justify;
-
 }
 
 .aboutUs {
@@ -531,7 +628,7 @@ h6 {
   padding-top: 3rem;
   padding-left: 3rem;
   padding-right: 3rem;
- 
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -546,16 +643,15 @@ h6 {
   background-repeat: no-repeat, repeat;
   background-size: 10rem;
   background-position: bottom;
-  background-position-x: 95% ;
-  background-position-y: 100px ;
+  background-position-x: 95%;
+  background-position-y: 100px;
 }
 
-.aboutUs h1{
+.aboutUs h1 {
   width: 50%;
   /* outline: red dashed 1px;  */
-
 }
-.aboutUs p{
+.aboutUs p {
   width: 50%;
   /* outline: red dashed 1px;  */
   /* text-align: justify; */

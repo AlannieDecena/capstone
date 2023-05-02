@@ -13,8 +13,8 @@ router.get('/:id', (req, res) => {
 })
 
 router.post('/create', (req, res) => {
-    // console.log(req.body.mood)
-    Controllers.createMood(req.body, res)
+    console.log(req.body.mood)
+    // Controllers.createMood(req.body, res)
 })
 
 // router.put('/put/:id', (req, res) => {
@@ -30,8 +30,8 @@ router.get('/weeklymood/:id', (req, res) => {
 })
 
 router.post('/update', (req, res) => {
-    // console.log(req.body.mood)
-    Controllers.updateMood(req.body, res)
+    // console.log(req.body.userId)
+    Controllers.updateMood(req, res)
 })
 
 module.exports = router;

@@ -4,7 +4,7 @@ import axios from "axios";
 import React, { useState, useContext, useEffect } from "react";
 import {useParams} from 'react-router-dom'
 import { UserContext } from "../context/UserContext";
-
+// This component is for get the mood data and place it in the chart
 
 const labels = ["Sunday", "Monday", "Tuesday", "Wednesday", "Friday", "Saturday"];
 
@@ -18,11 +18,11 @@ const LineChart = () => {
     const params = useParams();
     const id = params.id;
     console.log(userCurrent)
-    // const userCurrent = userCurrent.id
+
 
     useEffect( () => {
     axios
-    // .get(`http://localhost:8001/mood/${id}`)
+   
     .get(`http://localhost:8001/mood/weeklymood/${userCurrent.id}`)
     .then((response) => {
       setMoodData(response.data.data);

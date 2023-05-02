@@ -1,30 +1,35 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import SideBar from "../components/SideBar";
-import Notes from "../components/Notes";
-import Note from "../components/Note";
-import { NavLink } from "react-router-dom";
-import NotesList from "../components/NoteList";
+import DisplayNotes from "../components/DisplayNotes";
+import axios from "axios";
+import { UserContext } from "../context/UserContext";
+import AddNote from "../components/AddNote" 
+// This the users notes/journal page where they can view their past notes, add and delete
 
 export default function NotesPage(props) {
-  const notes = props.notes || []
+const [notes, setNotes] = useState([]);
+const {userCurrent} = useContext(UserContext)
+useEffect(() => {
+console.log(userCurrent.id)
+  axios.get(`http://localhost:8001/note/user/${userCurrent.id}` )
+  .then(response => {
+    setNotes(response.data.data)
+    console.log(notes)
+  })
+
+},[]);
+
 
   return (
     <>
       <SideBar />
-      <div>
-      {notes.map((note, index) => 
-        
-          <div key={index} className="card">
-            <div className="card-header">{note.createdAt}</div>
-            <div className="card-body">
-              <p className="card-text"> {note.note}</p>
-              
-            </div>
-          </div>
-      )}
-      <NotesList/>
-      <Notes/>
+      
+      <div id="notesPage">
+    
+      <DisplayNotes notes={notes} updateNotes={setNotes}/>
+      <AddNote notes={notes} updateNotes={setNotes}/>
       </div>
+   
     </>
   );
 }
