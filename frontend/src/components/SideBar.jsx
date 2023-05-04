@@ -17,9 +17,9 @@ export default function SideBar() {
         <li>
         <NavLink to="/notes">Journal</NavLink>
         </li>
-        <li>
-          <NavLink to="/displaymoods">Charts</NavLink>
-        </li>
+        {/* <li>
+          <NavLink to="/chart">Charts</NavLink>
+        </li> */}
         <li>
           <NavLink to="/goals">Goals</NavLink>
         </li>
@@ -27,7 +27,7 @@ export default function SideBar() {
           <NavLink to="/changemood">Mood</NavLink>
         </li>
         <li>
-          <NavLink to="/">sign out</NavLink>
+          <NavLink to="/logout">sign out</NavLink>
         </li>
         <img className="sideLogo" src={capLogo} alt="capLogo" />
       </ul>

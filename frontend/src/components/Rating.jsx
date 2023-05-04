@@ -30,9 +30,9 @@ const handleNextBtn = () => {
 }
   return (
    
-    <div className="ratingBox chart">
+    <div className='ratingBox' >
         <h3>How are you today?</h3>
-        <div id='getMoodText'>I'm feeling {mood}</ div>
+        <div>I'm feeling {mood}</ div>
         {emojiRating.map((emoji) => 
         <div id="emoBtn" key={emoji.rating}  onClick={() => dispatch(emoji.rating)}> <img id="emoImg" src={emoji.face} alt="" /> </div>)}
         <div>

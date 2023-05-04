@@ -2,7 +2,7 @@ import React from "react";
 import LogInPage from "./logInPage";
 import capLogo from "../images/capLogo.png"
 import { NavLink } from "react-router-dom";
-// this is where lands and logs in.
+// this is where the user lands and logs in.
 
 export default function EntryPage() {
   return (

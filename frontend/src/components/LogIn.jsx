@@ -48,7 +48,7 @@ export default function LogIn(props) {
         }
 
         setLoggedIn(isLoggedIn);
-        isLoggedIn ? nav("/rating") : null;
+        isLoggedIn ? nav("/entryMoods") : null;
       });
   };
 

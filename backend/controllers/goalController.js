@@ -36,7 +36,7 @@ const userGoalID = (req, res) => {
 }
 
 const updateGoal = (req, res) => {
-   
+   console.log(req.body)
     Models.Goal.update(req.body, {
         where: {
             id:

@@ -22,7 +22,7 @@ const togglePage = (page) => {
     <div >
       {/* <NavBar/> */}
         {currentPage === 'login' ? <LogIn onPageSwitch={togglePage} /> : <Signup onPageSwitch={togglePage}/>}
-        <LogOut/>
+        {/* <LogOut/> */}
         
     </div>
 

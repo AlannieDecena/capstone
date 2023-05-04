@@ -2,9 +2,11 @@ import React from "react";
 import DisplayGoals from "../components/DisplayGoals";
 import SideBar from "../components/SideBar";
 import AddGoal from "../components/AddGoal";
+import { useState } from "react";
 // This is users goals page
 
-export default function GoalsPage() {
+export default function GoalsPage({ goals, setGoals }) {
+    
   return (
     <>
       <SideBar />
@@ -14,10 +16,12 @@ export default function GoalsPage() {
           <h1>Goals</h1>
         </div>
         <div id="goalWrapper">
-          <DisplayGoals />
-          <AddGoal/>
-        </div>
-      </div>
+          <DisplayGoals goals={goals} setGoals={setGoals}/>
+         
+       </div> 
+       <div className="goalInput">
+        <AddGoal goals={goals} setGoals={setGoals}/></div>
+      </div> 
     </>
   );
 }

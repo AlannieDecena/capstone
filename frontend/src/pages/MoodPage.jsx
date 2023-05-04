@@ -7,7 +7,7 @@ export default function MoodPage() {
   return (
     <>
     <SideBar/>
-    <div id='moodPage' class="overflow-hidden">
+    <div id='moodPage' className="overflow-hidden">
         
         <Rating/>
     </div>

@@ -30,15 +30,15 @@ export default function AddNote(props) {
         <div className="form-floating">
           <textarea
             onChange={(e) => setNote(e.target.value)}
-            className="form"
+            id="formtextarea"
             placeholder="Feel free to write anything"
-            id="floatingTextarea2"
+           
             style={{ height: "100px" }}
           ></textarea>
           <label htmlFor="floatingTextarea2"></label>
         </div>
 
-        <button className="btn-primary" onClick={handleNoteSubmit}>
+        <button className="btn-primary saveNote" onClick={handleNoteSubmit}>
           save
         </button>
       </div>

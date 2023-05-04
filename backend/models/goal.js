@@ -27,7 +27,9 @@ Goal.init({
             key: "id"
         }
     },
-
+completed: {
+    type: DataTypes.DATE, allowNull: true
+}
    
 },
     {
