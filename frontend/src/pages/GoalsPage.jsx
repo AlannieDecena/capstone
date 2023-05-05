@@ -1,12 +1,14 @@
+// Import React and necessary components
 import React from "react";
 import DisplayGoals from "../components/DisplayGoals";
 import SideBar from "../components/SideBar";
 import AddGoal from "../components/AddGoal";
-import { useState } from "react";
-// This is users goals page
 
+
+// Define GoalsPage component
 export default function GoalsPage({ goals, setGoals }) {
-    
+
+  // Render the following components with their respective props
   return (
     <>
       <SideBar />
@@ -17,10 +19,10 @@ export default function GoalsPage({ goals, setGoals }) {
         </div>
         <div id="goalWrapper">
           <DisplayGoals goals={goals} setGoals={setGoals}/>
-         
-       </div> 
-       <div className="goalInput">
-        <AddGoal goals={goals} setGoals={setGoals}/></div>
+        </div> 
+        <div className="goalInput">
+          <AddGoal goals={goals} setGoals={setGoals}/>
+        </div>
       </div> 
     </>
   );

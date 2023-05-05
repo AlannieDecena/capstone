@@ -3,10 +3,13 @@ import React, { useState, useContext, useEffect } from "react";
 import { UserContext } from "../context/UserContext";
 
 // This component is for adding displaying the Goals list
+// It receives the goals and setGoals functions as props from a parent component
 
 export default function DisplayGoals({ goals, setGoals }) {
   const { userCurrent, handleUser } = useContext(UserContext);
 
+  // This useEffect hook runs only once when the component is mounted.
+  // It fetches the goals for the current user from the server and sets them in state.
   useEffect(() => {
     console.log(userCurrent.id);
     axios
@@ -16,6 +19,8 @@ export default function DisplayGoals({ goals, setGoals }) {
       });
   }, []);
 
+  // This function handles the completion of a goal.
+  // It updates the state of the goal and sends a PUT request to the server to update the database.
   const handleDate = (id) => {
 
     const now = new Date();
@@ -42,6 +47,9 @@ export default function DisplayGoals({ goals, setGoals }) {
         console.log(error);
       });
   };
+
+  // This function handles the deletion of a goal.
+  // It sends a DELETE request to the server to delete the goal from the database.
   const handleDelete = (e, id) => {
     e.preventDefault();
 

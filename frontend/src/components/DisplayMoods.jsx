@@ -1,10 +1,11 @@
+// Import the React library and three components: SideBar, LineChart, and Rating
 import React from "react";
-import SideBar from "./SideBar";
 import LineChart from "./LineChat";
-import Rating from "./Rating";
-// This component is used to display the moods
 
+
+// This component is used to display the moods
 export default function DisplayMoods() {
+  // Return a div with the LineChart component
   return (
     <div>
       <LineChart/>

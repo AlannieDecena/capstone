@@ -36,7 +36,7 @@ function AppRoutes(props) {
       <Route path="/notes" element={<JournalPage {...props} />} />
       <Route path="/goals" element={<GoalsPage {...props}  goals={goals} setGoals={setGoals}/>} />
       <Route path="/about" element={<AboutPage {...props} />} />
-      {/* <Route path="/chart" element={<ChartPage {...props} />} /> */}
+  
       
 
     </Routes>

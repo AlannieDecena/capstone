@@ -1,8 +1,9 @@
+// Importing necessary models and dependencies
 "use strict";
 const Models = require("../models");
 const {Op} = require('sequelize')
 
-
+// Retrieves all Mood records and sends them as the response
 const getMood = (req, res) => {
     Models.Mood.findAll({}).then(function (data) {
         res.send({ result: 200, data: data })
@@ -11,6 +12,7 @@ const getMood = (req, res) => {
     })
 }
 
+// Retrieves a specific Mood record by ID and sends it as the response
 const getMoodID = (req, res) => {
     Models.Mood.findAll({where: { id: req.params.id }}).then(function (data) {
         res.send({ result: 200, data: data })
@@ -19,8 +21,9 @@ const getMoodID = (req, res) => {
     })
 }
 
+// Creates a new Mood record and sends it as the response
 const createMood = (data, res) => {
-    
+
     Models.Mood.create(data).then(function (data) {
         res.send({ result: 200, data: data })
         console.log(data)
@@ -29,20 +32,22 @@ const createMood = (data, res) => {
     })
 }
 
+// Updates a Mood record and sends it as the response
 const updateMood = (req, res) => {
-    // console.log(req.body.mood)
     const newtoday = new Date()
     Models.Mood.findOrCreate(
         {where: {[Op.and] : [ { userId: req.body.userId }, 
         {createdAt:  newtoday}]},
         defaults: req.body
-        
+
         }).then(function (data) {
         res.send({ result: 200, data: data })
     }).catch(err => {
         throw err
     })
 }
+
+// Deletes a Mood record and sends it as the response
 const deleteMood = (req, res) => {
     Models.Mood.destroy({
         where: { id: req.params.id }
@@ -53,6 +58,7 @@ const deleteMood = (req, res) => {
     })
 }
 
+// Retrieves all Mood records for a user for the past 7 days, organizes them by day, and sends them as the response
 const weeklymood = (req, res) => {
     const today = new Date() //utc time zone gmt +0
     const sunday = new Date (today.getFullYear(), today.getMonth(), today.getDate()) // gmt +10 localtime zone
@@ -60,7 +66,7 @@ const weeklymood = (req, res) => {
    console.log(sunday)
 
     Models.Mood.findAll({where: {[Op.and] : [ { userId: req.params.id }, {createdAt: {[Op.gte]:  sunday}}]}}).then(function (data) {
-     
+
         const dailyMood = new Map();
         const todayDay = today.getDay()
         for (let i = 0; i <= todayDay; i++) {
@@ -76,6 +82,8 @@ const weeklymood = (req, res) => {
         throw err
     })
 }
+
+// Exports all functions for use in other files
 module.exports = {
     getMood, getMoodID, createMood, updateMood, deleteMood, weeklymood
 }

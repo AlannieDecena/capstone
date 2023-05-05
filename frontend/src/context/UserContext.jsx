@@ -1,29 +1,36 @@
 import React, {useState} from "react";
 import {useCookies} from 'react-cookie';
-//  This context is getting the user data from the backend and passing it to the components to be used in the components 
-// this is also stored in the cookies so that the user can be logged in and logged out without having to log in again.
 
-
+// This context is getting the user data from the backend and passing it to the components to be used in the components 
+// This is also stored in the cookies so that the user can be logged in and logged out without having to log in again.
+// Creating a user context object to share data between components
 export const UserContext = React.createContext();
 
+// UserProvider function to provide user data to components
 export const UserProvider = (props) => {
-    const [cookies, setCookie, removeCookie] = useCookies(['user']);
-    const [userCurrent, setUserCurrent] = useState(cookies.userObject ? cookies.userObject : {}); 
-     
 
+    // Using the react-cookie hook to manage the user cookie
+    const [cookies, setCookie, removeCookie] = useCookies(['user']);
+
+    // Using useState hook to manage the current user 
+    const [userCurrent, setUserCurrent] = useState(cookies.userObject ? cookies.userObject : {}); 
+
+    // Function to handle user object and set cookie
     const handleUser = (user) => {
         if (user.id) {
+            // Setting user cookie for 24 hours
             setCookie('userObject', JSON.stringify(user), { path: '/', maxAge: 60 * 60 * 24 }) 
         } else {
+            // If user does not have an id, remove user cookie
             removeCookie('userObject')
         }
-        console.log(user)
+        // Setting the current user object
         setUserCurrent(user)
-        console.log(userCurrent)
     }
-    
+
 
     return (
+        // Providing the current user and handleUser function to the context object
         <UserContext.Provider value={{userCurrent, handleUser}}>
             {props.children}
         </UserContext.Provider>

@@ -1,24 +1,20 @@
-'use strict'
+'use strict';
 
-//require the model
-const User = require('./user') 
-const Mood = require('./mood') 
-const Goal = require('./goal')
-const Note = require('./note')
+// Import the model files
+const User = require('./user'); 
+const Mood = require('./mood'); 
+const Goal = require('./goal');
+const Note = require('./note');
 
-
- //sync the model
+// Asynchronous function to synchronize the models with the database
 async function init() {
     await User.sync();
     await Mood.sync();
     await Goal.sync();
     await Note.sync();
-  
-    
-  
 };
 
-//export the model
+// Call the init function to synchronize the models and export the model files
 init();
 module.exports = {
     User,
@@ -26,4 +22,3 @@ module.exports = {
     Goal,
     Note
 };
-
