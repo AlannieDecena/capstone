@@ -7,13 +7,14 @@ My project is investigating  the lack of accessible and user-friendly tools for 
 The aim of this project was to create a customizable mood tracker application that helps users monitor their progress and achieve their goals. Although some features were not included due to time constraints, the software achieved its objectives of documenting moods, displaying weekly results, and providing a space for notes and goals. Further improvements are still possible.
 
 
+Here is how you can use my applicatioin 
+
 Pre-requisites: Installation 
 (download the package that is suited for your device eg: mac or windows)
 	Node.js & NPM : 
 	https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
-	MySQL & Workbench: (IF you want to look at the backend,if you don’t already have one make sure to the create a MySQL account)
-  https://dev.mysql.com/doc/workbench/en/wb-installing.html
-
+	MySQL: https://dev.mysql.com/doc/refman/5.7/en/macos-installation-pkg.html
+	
 Setting up the Application:
 Cloning: Front and Backend will be available on a github repository 
 https://github.com/AlannieDecena/capstone
